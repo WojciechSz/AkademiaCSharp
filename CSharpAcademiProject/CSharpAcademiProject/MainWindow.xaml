@@ -1,8 +1,67 @@
 ﻿<Window x:Class="CSharpAcademiProject.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="450" Width="400">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="18*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="1" Grid.Row="5" >
+            <Button Name="buttonC" Content="C" Height="45" Width="50" Margin="5" Click="buttonC_Click"/>
+            <Button Name="button7" Content="7" Height="45" Width="50" Margin="5" Click="button7_Click"/>
+            <Button Name="button4" Content="4" Height="45" Width="50" Margin="5" Click="button4_Click"/>
+            <Button Name="button1" Content="1" Height="45" Width="50" Margin="5" Click="button1_Click"/>
+            <Button Name="button0" Content="0" Height="45" Width="50" Margin="5" Click="button0_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="5" >
+            <Button Name="buttonCE" Content="CE" Height="45" Width="50" Margin="5" Click="buttonCE_Click"/>
+            <Button Name="button8" Content="8" Height="45" Width="50" Margin="5" Click="button8_Click"/>
+            <Button Name="button5" Content="5" Height="45" Width="50" Margin="5" Click="button5_Click"/>
+            <Button Name="button2" Content="2" Height="45" Width="50" Margin="5" Click="button2_Click"/>
+            <Button Name="buttonDot" Content="." Height="45" Width="50" Margin="5" Click="buttonDot_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Column="3" Grid.Row="5" >
+            <Button Name="buttonPlusMinus" Content="+/-" Height="45" Width="50" Margin="5" Click="buttonPlusMinus_Click"/>
+            <Button Name="button9" Content="9" Height="45" Width="50" Margin="5" Click="button9_Click"/>
+            <Button Name="button6" Content="6" Height="45" Width="50" Margin="5" Click="button6_Click"/>
+            <Button Name="button3" Content="3" Height="45" Width="50" Margin="5" Click="button3_Click"/>
+            <Button Name="buttonEqual" Content="=" Height="45" Width="50" Margin="5" Click="buttonEqual_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Column="4" Grid.Row="5" >
+            <Button Name="buttonSquare" Content="√" Height="45" Width="50" Margin="5" Click="buttonSquare_Click"/>
+            <Button Name="buttonMultiple" Content="x" Height="45" Width="50" Margin="5" Click="buttonMultiple_Click"/>
+            <Button Name="buttonSubstract" Content="-" Height="45" Width="50" Margin="5" Click="buttonSubstract_Click"/>
+            <Button Name="buttonAdd" Content="+" Height="100" Width="50" Margin="5" Click="buttonAdd_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Column="5" Grid.Row="5" >
+            <Button Name="buttonPercent" Content="%" Height="45" Width="50" Margin="5" Click="buttonPercent_Click"/>
+            <Button Name="buttonDivision" Content="÷" Height="45" Width="50" Margin="5" Click="buttonDivision_Click"/>
+            <Button Name="buttonMrc" Content="MRC" Height="45" Width="50" Margin="5" Click="buttonMrc_Click"/>
+            <Button Name="buttonMMinus" Content="M-" Height="45" Width="50" Margin="5" Click="buttonMMinus_Click"/>
+            <Button Name="buttonMPlus" Content="M+" Height="45" Width="50" Margin="5" Click="buttonMPlus_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="5">
+            <TextBlock Name="resultTextBox" Background="AliceBlue" Height="48"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.RowSpan="1" Grid.Column="4" Grid.ColumnSpan="2">
+            <TextBlock Name="batteryTextBox" Background="#FF5C656C" Height="32"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="2">
+            <Label Content="manufacturer" Height="32"/>
+        </StackPanel>
     </Grid>
 </Window>
