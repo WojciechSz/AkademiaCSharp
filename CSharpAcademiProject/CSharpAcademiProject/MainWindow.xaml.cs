@@ -22,134 +22,130 @@ namespace CSharpAcademiProject
     {
         public MainWindow()
         {
-            int buttonHeight = 50;
             InitializeComponent();
         }
 
-        private void ImieTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void buttonPart6Field1_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void buttonC_Click(object sender, RoutedEventArgs e)
+        private void buttonPart5Field1_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void button7_Click(object sender, RoutedEventArgs e)
+        private void buttonPart4Field1_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void button4_Click(object sender, RoutedEventArgs e)
+        private void buttonPart3Field1_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void buttonPart2Field1_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void button0_Click(object sender, RoutedEventArgs e)
+        private void buttonPart1Field1_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void buttonCE_Click(object sender, RoutedEventArgs e)
+        private void buttonPart6Field2_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void button8_Click(object sender, RoutedEventArgs e)
+        private void buttonPart5Field2_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void button5_Click(object sender, RoutedEventArgs e)
+        private void buttonPart4Field2_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void buttonPart3Field2_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void buttonDot_Click(object sender, RoutedEventArgs e)
+        private void buttonPart2Field2_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void buttonPlusMinus_Click(object sender, RoutedEventArgs e)
+        private void buttonPart1Field2_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void button9_Click(object sender, RoutedEventArgs e)
+        private void buttonPart6Field3_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void button6_Click(object sender, RoutedEventArgs e)
+        private void buttonPart5Field3_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void button3_Click(object sender, RoutedEventArgs e)
+        private void buttonPart4Field3_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void buttonEqual_Click(object sender, RoutedEventArgs e)
+        private void buttonPart3Field3_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void buttonSquare_Click(object sender, RoutedEventArgs e)
+        private void buttonPart2Field3_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void buttonMultiple_Click(object sender, RoutedEventArgs e)
+        private void buttonPart1Field3_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void buttonSubstract_Click(object sender, RoutedEventArgs e)
+        private void buttonPart6Field4_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void buttonAdd_Click(object sender, RoutedEventArgs e)
+        private void buttonPart5Field4_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void buttonPercent_Click(object sender, RoutedEventArgs e)
+        private void buttonPart4Field4_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void buttonDivision_Click(object sender, RoutedEventArgs e)
+        private void buttonPart3Field4_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void buttonMrc_Click(object sender, RoutedEventArgs e)
+        private void buttonPart2Field4_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void buttonMMinus_Click(object sender, RoutedEventArgs e)
+        private void buttonPart1Field4_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void buttonMPlus_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+ 
 
     }
 }
