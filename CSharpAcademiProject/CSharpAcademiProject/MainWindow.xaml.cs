@@ -274,27 +274,27 @@ namespace CSharpAcademiProject
 
         private void buttonPart6Field1_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart6Field1.Background = colorChange(buttonPart6Field1.Background);
+            buttonClickHandle(5, 0);
         }
 
         private void buttonPart5Field1_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart5Field1.Background = colorChange(buttonPart5Field1.Background);
+            buttonClickHandle(4, 0);
         }
 
         private void buttonPart4Field1_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart4Field1.Background = colorChange(buttonPart4Field1.Background);
+            buttonClickHandle(3, 0);
         }
 
         private void buttonPart3Field1_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart3Field1.Background = colorChange(buttonPart3Field1.Background);
+            buttonClickHandle(2, 0);
         }
 
         private void buttonPart2Field1_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart2Field1.Background = colorChange(buttonPart2Field1.Background);
+            buttonClickHandle(1, 0);
         }
 
         private void buttonPart1Field1_Click(object sender, RoutedEventArgs e)
@@ -304,27 +304,27 @@ namespace CSharpAcademiProject
 
         private void buttonPart6Field2_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart6Field2.Background = colorChange(buttonPart6Field2.Background);
+            buttonClickHandle(5, 1);
         }
 
         private void buttonPart5Field2_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart5Field2.Background = colorChange(buttonPart5Field2.Background);
+            buttonClickHandle(5, 1);
         }
 
         private void buttonPart4Field2_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart4Field2.Background = colorChange(buttonPart4Field2.Background);
+            buttonClickHandle(3, 1);
         }
 
         private void buttonPart3Field2_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart3Field2.Background = colorChange(buttonPart3Field2.Background);
+            buttonClickHandle(2, 1);
         }
 
         private void buttonPart2Field2_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart2Field2.Background = colorChange(buttonPart2Field2.Background);
+            buttonClickHandle(1, 1);
         }
 
         private void buttonPart1Field2_Click(object sender, RoutedEventArgs e)
@@ -334,27 +334,27 @@ namespace CSharpAcademiProject
 
         private void buttonPart6Field3_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart6Field3.Background = colorChange(buttonPart6Field3.Background);
+            buttonClickHandle(5, 2);
         }
 
         private void buttonPart5Field3_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart5Field3.Background = colorChange(buttonPart5Field3.Background);
+            buttonClickHandle(4, 2);
         }
 
         private void buttonPart4Field3_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart4Field3.Background = colorChange(buttonPart4Field3.Background);
+            buttonClickHandle(3, 2);
         }
 
         private void buttonPart3Field3_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart3Field3.Background = colorChange(buttonPart3Field3.Background);
+            buttonClickHandle(2, 2);
         }
 
         private void buttonPart2Field3_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart2Field3.Background = colorChange(buttonPart2Field3.Background);
+            buttonClickHandle(1, 2);
         }
 
         private void buttonPart1Field3_Click(object sender, RoutedEventArgs e)
@@ -364,35 +364,32 @@ namespace CSharpAcademiProject
 
         private void buttonPart6Field4_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart6Field4.Background = colorChange(buttonPart6Field4.Background);
+            buttonClickHandle(5, 3);
         }
 
         private void buttonPart5Field4_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart5Field4.Background = colorChange(buttonPart5Field4.Background);
+            buttonClickHandle(4, 3);
         }
 
         private void buttonPart4Field4_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart4Field4.Background = colorChange(buttonPart4Field4.Background);
+            buttonClickHandle(3, 3);
         }
 
         private void buttonPart3Field4_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart3Field4.Background = colorChange(buttonPart3Field4.Background);
+            buttonClickHandle(2, 3);
         }
 
         private void buttonPart2Field4_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart2Field4.Background = colorChange(buttonPart2Field4.Background);
+            buttonClickHandle(1, 3);
         }
 
         private void buttonPart1Field4_Click(object sender, RoutedEventArgs e)
         {
             buttonClickHandle(0, 3);
         }
-
- 
-
     }
 }
