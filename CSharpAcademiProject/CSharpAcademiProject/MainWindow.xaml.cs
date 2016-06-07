@@ -207,6 +207,28 @@ namespace CSharpAcademiProject
                     usedButton[matchCounter][fieldsCounter].IsHitTestVisible = false;
                 }
         }
+        private void buttonClickHandle(int thisMatch, int thisField)
+        {
+            this.allButtonsList[thisMatch][thisField].Background = colorChange(this.allButtonsList[thisMatch][thisField].Background);
+            int fieldCounter;
+            bool changeMade;
+            for (fieldCounter = 0; fieldCounter < ourGame.fieldNumber; fieldCounter++)
+            {
+                changeMade = false;
+                if (thisField != fieldCounter)
+                {
+                    if (this.allButtonsList[thisMatch][thisField].Background == this.allButtonsList[thisMatch][fieldCounter].Background)
+                    {
+                        this.allButtonsList[thisMatch][thisField].Background = colorChange(this.allButtonsList[thisMatch][thisField].Background);
+                        changeMade = true;
+                    }
+                }
+                if(changeMade == true)
+                {
+                    fieldCounter = 0;
+                }
+            }
+        }
         public SolidColorBrush colorChange(Brush actualBackground)
         {
             string actualBackgroundString;
@@ -277,7 +299,7 @@ namespace CSharpAcademiProject
 
         private void buttonPart1Field1_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart1Field1.Background = colorChange(buttonPart1Field1.Background);
+            buttonClickHandle(0, 0);
         }
 
         private void buttonPart6Field2_Click(object sender, RoutedEventArgs e)
@@ -307,7 +329,7 @@ namespace CSharpAcademiProject
 
         private void buttonPart1Field2_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart1Field2.Background = colorChange(buttonPart1Field2.Background);
+            buttonClickHandle(0, 1);
         }
 
         private void buttonPart6Field3_Click(object sender, RoutedEventArgs e)
@@ -337,7 +359,7 @@ namespace CSharpAcademiProject
 
         private void buttonPart1Field3_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart1Field3.Background = colorChange(buttonPart1Field3.Background);
+            buttonClickHandle(0, 2);
         }
 
         private void buttonPart6Field4_Click(object sender, RoutedEventArgs e)
@@ -367,7 +389,7 @@ namespace CSharpAcademiProject
 
         private void buttonPart1Field4_Click(object sender, RoutedEventArgs e)
         {
-            buttonPart1Field4.Background = colorChange(buttonPart1Field4.Background);
+            buttonClickHandle(0, 3);
         }
 
  
