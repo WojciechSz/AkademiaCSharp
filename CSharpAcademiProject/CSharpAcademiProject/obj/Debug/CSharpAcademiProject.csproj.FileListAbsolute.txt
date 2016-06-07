@@ -10,7 +10,6 @@ D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\bin\Debug\CSharp
 D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\bin\Debug\CSharpAcademiProject.pdb
 D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.exe
 D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.pdb
-D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.csprojResolveAssemblyReference.cache
 C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\bin\Debug\CSharpAcademiProject.exe.config
 C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.exe
 C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.pdb

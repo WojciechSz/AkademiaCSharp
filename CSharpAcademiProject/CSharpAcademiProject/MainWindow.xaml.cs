@@ -21,8 +21,6 @@ namespace CSharpAcademiProject
     public enum compareResult { equal, notEqual }
     public partial class MainWindow : Window
     {
-        public int matchNumber = 6;
-        public int fieldNumber = 4;
         public List<List<Button>> allButtonsList;
         public List<Button> part1ButtonsList;
         public List<Button> part2ButtonsList;
@@ -40,9 +38,21 @@ namespace CSharpAcademiProject
         public List<Button> goalColorsList;
         private Game ourGame;
         private Match ourMatch;
+        
         public MainWindow()
         {
             InitializeComponent();
+
+            ourGame = new Game();
+            ourMatch = new Match(0);
+            
+            listInitialization();
+            prepareLists();
+            buttonsInitialConditions();
+
+        }
+        private void listInitialization()
+        {
             part1ButtonsList = new List<Button>();
             part2ButtonsList = new List<Button>();
             part3ButtonsList = new List<Button>();
@@ -58,9 +68,40 @@ namespace CSharpAcademiProject
             score6LablesList = new List<Label>();
             allScoresLabelsList = new List<List<Label>>();
             goalColorsList = new List<Button>();
-            ourGame = new Game();
-            ourMatch = new Match(0);
+        }
+        private void buttonsInitialConditions()
+        {
+            disableButtons(allButtonsList, ourMatch);
+            enableButtons(allButtonsList, ourMatch);
+            enableHitTestButtons(allButtonsList, ourMatch);
+        }
+        private void prepareLists()
+        {
+            prepareGoalColorsList();
+            prepareAllScoresList();
+            prepareScoreLablesList();
+            prepareButtonsLists();
+            prepareAllButtonsList();
+        }
+        private void prepareGoalColorsList()
+        {
+            goalColorsList.Add(this.SetField1);
+            goalColorsList.Add(this.SetField2);
+            goalColorsList.Add(this.SetField3);
+            goalColorsList.Add(this.SetField4);
 
+        }
+        private void prepareAllScoresList()
+        {
+            allScoresLabelsList.Add(score1LablesList);
+            allScoresLabelsList.Add(score2LablesList);
+            allScoresLabelsList.Add(score3LablesList);
+            allScoresLabelsList.Add(score4LablesList);
+            allScoresLabelsList.Add(score5LablesList);
+            allScoresLabelsList.Add(score6LablesList);
+        }
+        private void prepareScoreLablesList()
+        {
             score1LablesList.Add(this.ScoreParty1Field1);
             score1LablesList.Add(this.ScoreParty1Field2);
             score1LablesList.Add(this.ScoreParty1Field3);
@@ -90,29 +131,8 @@ namespace CSharpAcademiProject
             score6LablesList.Add(this.ScoreParty6Field2);
             score6LablesList.Add(this.ScoreParty6Field3);
             score6LablesList.Add(this.ScoreParty6Field4);
-
-            allScoresLabelsList.Add(score1LablesList);
-            allScoresLabelsList.Add(score2LablesList);
-            allScoresLabelsList.Add(score3LablesList);
-            allScoresLabelsList.Add(score4LablesList);
-            allScoresLabelsList.Add(score5LablesList);
-            allScoresLabelsList.Add(score6LablesList);
-
-            goalColorsList.Add(this.SetField1);
-            goalColorsList.Add(this.SetField2);
-            goalColorsList.Add(this.SetField3);
-            goalColorsList.Add(this.SetField4);
-            
-            prepereButtonsLists();
-            prepareAllButtonsList();
-            
-            disableButtons(allButtonsList, ourMatch);
-            enableButtons(allButtonsList, ourMatch);
-            enableHitTestButtons(allButtonsList, ourMatch);
-
-
         }
-        private void prepereButtonsLists ()
+        private void prepareButtonsLists ()
         {
             part1ButtonsList.Add(this.buttonPart1Field1);
             part1ButtonsList.Add(this.buttonPart1Field2);
@@ -156,7 +176,7 @@ namespace CSharpAcademiProject
         private void enableButtons (List <List<Button>> usedButton, Match actualMatch)
         {
             int fieldsCounter;
-            for (fieldsCounter = 0; fieldsCounter < fieldNumber; fieldsCounter++)
+            for (fieldsCounter = 0; fieldsCounter < ourGame.fieldNumber; fieldsCounter++)
             {
                 usedButton[actualMatch.MatchCounter][fieldsCounter].IsEnabled = true;
             }
@@ -164,7 +184,7 @@ namespace CSharpAcademiProject
         private void enableHitTestButtons(List<List<Button>> usedButton, Match actualMatch)
         {
             int fieldsCounter;
-            for (fieldsCounter = 0; fieldsCounter < fieldNumber; fieldsCounter++)
+            for (fieldsCounter = 0; fieldsCounter < ourGame.fieldNumber; fieldsCounter++)
             {
                 usedButton[actualMatch.MatchCounter][fieldsCounter].IsHitTestVisible = true;
             }
@@ -172,8 +192,8 @@ namespace CSharpAcademiProject
         private void disableButtons(List<List<Button>> usedButton, Match actualMatch)
         {
             int fieldsCounter, matchCounter;
-            for (matchCounter = 0; matchCounter < matchNumber; matchCounter++)
-                for (fieldsCounter = 0; fieldsCounter < fieldNumber; fieldsCounter++)
+            for (matchCounter = 0; matchCounter < ourGame.matchNumber; matchCounter++)
+                for (fieldsCounter = 0; fieldsCounter < ourGame.fieldNumber; fieldsCounter++)
                 {
                     usedButton[matchCounter][fieldsCounter].IsEnabled = false;
                 }
@@ -181,8 +201,8 @@ namespace CSharpAcademiProject
         private void disableHitTestButtons(List<List<Button>> usedButton, Match actualMatch)
         {
             int fieldsCounter, matchCounter;
-            for (matchCounter = 0; matchCounter < matchNumber; matchCounter++)
-                for (fieldsCounter = 0; fieldsCounter < fieldNumber; fieldsCounter++)
+            for (matchCounter = 0; matchCounter < ourGame.matchNumber; matchCounter++)
+                for (fieldsCounter = 0; fieldsCounter < ourGame.fieldNumber; fieldsCounter++)
                 {
                     usedButton[matchCounter][fieldsCounter].IsHitTestVisible = false;
                 }
@@ -217,40 +237,11 @@ namespace CSharpAcademiProject
             }
             return newColor;
         }
-        private compareResult colorCompare(Brush actualBackground, Brush goalBackground)
-        {
-            if (actualBackground == goalBackground)
-            {
-                return compareResult.equal;
-            }
-            else
-            {
-                return compareResult.notEqual;
-            }
-        }
-        private void calculateScore(List<List<Button>> actualField, List<Button> goalBackground)
-        {
-            List<compareResult> result;
-            result = new List<compareResult>();
-            result.Add(compareResult.equal);
-            result.Add(compareResult.equal);
-            result.Add(compareResult.equal);
-            result.Add(compareResult.equal);
-            int fieldsCounter;
-            for (fieldsCounter = 0; fieldsCounter < fieldNumber; fieldsCounter++)
-            {
-                result[fieldsCounter] = colorCompare(actualField[ourMatch.MatchCounter][fieldsCounter].Background, goalBackground[fieldsCounter].Background);
-                if (result[fieldsCounter] == compareResult.equal)
-                {
-                    allScoresLabelsList[ourMatch.MatchCounter][fieldsCounter].Background = Brushes.Black;
-                }
-            }
-        }
         private void buttonSet_click(object sender, RoutedEventArgs e)
         {
-            calculateScore(allButtonsList, goalColorsList);
+            ourMatch.calculateScore(allButtonsList, allScoresLabelsList, goalColorsList);
             disableHitTestButtons(allButtonsList, ourMatch);
-            if (this.ourMatch.MatchCounter < matchNumber - 1)
+            if (this.ourMatch.MatchCounter < ourGame.matchNumber - 1)
             {
                 this.ourMatch.MatchCounter++;
                 enableButtons(allButtonsList, ourMatch);
