@@ -22,16 +22,16 @@
             <Button Name="buttonSet" Height="30" Width="30" Margin="10" Click="buttonSet_click"/>
         </StackPanel>
         <StackPanel Grid.Column="4" Grid.Row="0" Grid.RowSpan="2" >
-            <Label Name="SetField1" Height="40" Width="25" Margin="10" Background="Red"/>
+            <Button Name="SetField1" Height="40" Width="25" Margin="10" Background="Red" IsEnabled="False" IsHitTestVisible="False"/>
         </StackPanel>
         <StackPanel Grid.Column="5" Grid.Row="0" Grid.RowSpan="2" >
-            <Label Name="SetField2" Height="40" Width="25" Margin="10" Background="Gray"/>
+            <Button Name="SetField2" Height="40" Width="25" Margin="10" Background="Yellow" IsEnabled="False" IsHitTestVisible="False"/>
         </StackPanel>
         <StackPanel Grid.Column="6" Grid.Row="0" Grid.RowSpan="2" >
-            <Label Name="SetField3" Height="40" Width="25" Margin="10" Background="Gray"/>
+            <Button Name="SetField3" Height="40" Width="25" Margin="10" Background="Green" IsEnabled="False" IsHitTestVisible="False"/>
         </StackPanel>
         <StackPanel Grid.Column="7" Grid.Row="0" Grid.RowSpan="2" >
-            <Label Name="SetField4" Height="40" Width="25" Margin="10" Background="Gray"/>
+            <Button Name="SetField4" Height="40" Width="25" Margin="10" Background="Violet" IsEnabled="False" IsHitTestVisible="False"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
             <Label Name="ScoreParty6Field1" Height="20" Width="25" Margin="5" Background="Gray"/>
@@ -62,36 +62,36 @@
             <Label Name="ScoreParty1Field4" Height="20" Width="25" Margin="5" Background="Gray"/>
         </StackPanel>
         <StackPanel Grid.Column="4" Grid.Row="1" Grid.RowSpan="2" >
-            <Button Name="buttonPart6Field1"  Height="40" Width="25" Margin="10" Click="buttonPart6Field1_Click"/>
-            <Button Name="buttonPart5Field1"  Height="40" Width="25" Margin="10" Click="buttonPart5Field1_Click"/>
-            <Button Name="buttonPart4Field1"  Height="40" Width="25" Margin="10" Click="buttonPart4Field1_Click"/>
-            <Button Name="buttonPart3Field1"  Height="40" Width="25" Margin="10" Click="buttonPart3Field1_Click"/>
-            <Button Name="buttonPart2Field1"  Height="40" Width="25" Margin="10" Click="buttonPart2Field1_Click"/>
-            <Button Name="buttonPart1Field1"  Height="40" Width="25" Margin="10" Click="buttonPart1Field1_Click"/>
+            <Button Name="buttonPart6Field1"  Height="40" Width="25" Margin="10" Click="buttonPart6Field1_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart5Field1"  Height="40" Width="25" Margin="10" Click="buttonPart5Field1_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart4Field1"  Height="40" Width="25" Margin="10" Click="buttonPart4Field1_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart3Field1"  Height="40" Width="25" Margin="10" Click="buttonPart3Field1_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart2Field1"  Height="40" Width="25" Margin="10" Click="buttonPart2Field1_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart1Field1"  Height="40" Width="25" Margin="10" Click="buttonPart1Field1_Click" IsHitTestVisible="False"/>
         </StackPanel>
         <StackPanel Grid.Column="5" Grid.Row="1" Grid.RowSpan="2" >
-            <Button Name="buttonPart6Field2"  Height="40" Width="25" Margin="10" Click="buttonPart6Field2_Click"/>
-            <Button Name="buttonPart5Field2"  Height="40" Width="25" Margin="10" Click="buttonPart5Field2_Click"/>
-            <Button Name="buttonPart4Field2"  Height="40" Width="25" Margin="10" Click="buttonPart4Field2_Click"/>
-            <Button Name="buttonPart3Field2"  Height="40" Width="25" Margin="10" Click="buttonPart3Field2_Click"/>
-            <Button Name="buttonPart2Field2"  Height="40" Width="25" Margin="10" Click="buttonPart2Field2_Click"/>
-            <Button Name="buttonPart1Field2"  Height="40" Width="25" Margin="10" Click="buttonPart1Field2_Click"/>
+            <Button Name="buttonPart6Field2"  Height="40" Width="25" Margin="10" Click="buttonPart6Field2_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart5Field2"  Height="40" Width="25" Margin="10" Click="buttonPart5Field2_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart4Field2"  Height="40" Width="25" Margin="10" Click="buttonPart4Field2_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart3Field2"  Height="40" Width="25" Margin="10" Click="buttonPart3Field2_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart2Field2"  Height="40" Width="25" Margin="10" Click="buttonPart2Field2_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart1Field2"  Height="40" Width="25" Margin="10" Click="buttonPart1Field2_Click" IsHitTestVisible="False"/>
         </StackPanel>
         <StackPanel Grid.Column="6" Grid.Row="1" Grid.RowSpan="2" >
-            <Button Name="buttonPart6Field3"  Height="40" Width="25" Margin="10" Click="buttonPart6Field3_Click"/>
-            <Button Name="buttonPart5Field3"  Height="40" Width="25" Margin="10" Click="buttonPart5Field3_Click"/>
-            <Button Name="buttonPart4Field3"  Height="40" Width="25" Margin="10" Click="buttonPart4Field3_Click"/>
-            <Button Name="buttonPart3Field3"  Height="40" Width="25" Margin="10" Click="buttonPart3Field3_Click"/>
-            <Button Name="buttonPart2Field3"  Height="40" Width="25" Margin="10" Click="buttonPart2Field3_Click"/>
-            <Button Name="buttonPart1Field3"  Height="40" Width="25" Margin="10" Click="buttonPart1Field3_Click"/>
+            <Button Name="buttonPart6Field3"  Height="40" Width="25" Margin="10" Click="buttonPart6Field3_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart5Field3"  Height="40" Width="25" Margin="10" Click="buttonPart5Field3_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart4Field3"  Height="40" Width="25" Margin="10" Click="buttonPart4Field3_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart3Field3"  Height="40" Width="25" Margin="10" Click="buttonPart3Field3_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart2Field3"  Height="40" Width="25" Margin="10" Click="buttonPart2Field3_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart1Field3"  Height="40" Width="25" Margin="10" Click="buttonPart1Field3_Click" IsHitTestVisible="False"/>
         </StackPanel>
         <StackPanel Grid.Column="7" Grid.Row="1" Grid.RowSpan="2" >
-            <Button Name="buttonPart6Field4"  Height="40" Width="25" Margin="10" Click="buttonPart6Field4_Click"/>
-            <Button Name="buttonPart5Field4"  Height="40" Width="25" Margin="10" Click="buttonPart5Field4_Click"/>
-            <Button Name="buttonPart4Field4"  Height="40" Width="25" Margin="10" Click="buttonPart4Field4_Click"/>
-            <Button Name="buttonPart3Field4"  Height="40" Width="25" Margin="10" Click="buttonPart3Field4_Click"/>
-            <Button Name="buttonPart2Field4"  Height="40" Width="25" Margin="10" Click="buttonPart2Field4_Click"/>
-            <Button Name="buttonPart1Field4"  Height="40" Width="25" Margin="10" Click="buttonPart1Field4_Click"/>
+            <Button Name="buttonPart6Field4"  Height="40" Width="25" Margin="10" Click="buttonPart6Field4_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart5Field4"  Height="40" Width="25" Margin="10" Click="buttonPart5Field4_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart4Field4"  Height="40" Width="25" Margin="10" Click="buttonPart4Field4_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart3Field4"  Height="40" Width="25" Margin="10" Click="buttonPart3Field4_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart2Field4"  Height="40" Width="25" Margin="10" Click="buttonPart2Field4_Click" IsHitTestVisible="False"/>
+            <Button Name="buttonPart1Field4"  Height="40" Width="25" Margin="10" Click="buttonPart1Field4_Click" IsHitTestVisible="False"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -9,7 +9,12 @@ namespace CSharpAcademiProject
     enum scoreMarker { Victory, Defeat, Outstanding }
     class Game
     {
-        public int gameTime
+        public int MaxMatchNumber
+        {
+            get;
+            set;
+        }
+        public int GameTime
         {
             get;
             set;

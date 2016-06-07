@@ -11,3 +11,15 @@ D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\bin\Debug\CSharp
 D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.exe
 D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.pdb
 D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.csprojResolveAssemblyReference.cache
+C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\bin\Debug\CSharpAcademiProject.exe.config
+C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.exe
+C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.pdb
+C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\bin\Debug\CSharpAcademiProject.exe
+C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\bin\Debug\CSharpAcademiProject.pdb
+C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\MainWindow.baml
+C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\MainWindow.g.cs
+C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\App.g.cs
+C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject_MarkupCompile.cache
+C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.g.resources
+C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.Properties.Resources.resources
+C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.csproj.GenerateResource.Cache

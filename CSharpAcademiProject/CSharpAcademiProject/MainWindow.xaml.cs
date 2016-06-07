@@ -21,11 +21,171 @@ namespace CSharpAcademiProject
     public enum compareResult { equal, notEqual }
     public partial class MainWindow : Window
     {
+        public int matchNumber = 6;
+        public int fieldNumber = 4;
+        public List<List<Button>> allButtonsList;
+        public List<Button> part1ButtonsList;
+        public List<Button> part2ButtonsList;
+        public List<Button> part3ButtonsList;
+        public List<Button> part4ButtonsList;
+        public List<Button> part5ButtonsList;
+        public List<Button> part6ButtonsList;
+        public List<List<Label>> allScoresLabelsList;
+        public List<Label> score1LablesList;
+        public List<Label> score2LablesList;
+        public List<Label> score3LablesList;
+        public List<Label> score4LablesList;
+        public List<Label> score5LablesList;
+        public List<Label> score6LablesList;
+        public List<Button> goalColorsList;
+        private Game ourGame;
+        private Match ourMatch;
         public MainWindow()
         {
             InitializeComponent();
-            Game ourGame = new Game();
-            Match ourMatch = new Match(1);
+            part1ButtonsList = new List<Button>();
+            part2ButtonsList = new List<Button>();
+            part3ButtonsList = new List<Button>();
+            part4ButtonsList = new List<Button>();
+            part5ButtonsList = new List<Button>();
+            part6ButtonsList = new List<Button>();
+            allButtonsList = new List<List<Button>>();
+            score1LablesList = new List<Label>();
+            score2LablesList = new List<Label>();
+            score3LablesList = new List<Label>();
+            score4LablesList = new List<Label>();
+            score5LablesList = new List<Label>();
+            score6LablesList = new List<Label>();
+            allScoresLabelsList = new List<List<Label>>();
+            goalColorsList = new List<Button>();
+            ourGame = new Game();
+            ourMatch = new Match(0);
+
+            score1LablesList.Add(this.ScoreParty1Field1);
+            score1LablesList.Add(this.ScoreParty1Field2);
+            score1LablesList.Add(this.ScoreParty1Field3);
+            score1LablesList.Add(this.ScoreParty1Field4);
+            
+            score2LablesList.Add(this.ScoreParty2Field1);
+            score2LablesList.Add(this.ScoreParty2Field2);
+            score2LablesList.Add(this.ScoreParty2Field3);
+            score2LablesList.Add(this.ScoreParty2Field4);
+            
+            score3LablesList.Add(this.ScoreParty3Field1);
+            score3LablesList.Add(this.ScoreParty3Field2);
+            score3LablesList.Add(this.ScoreParty3Field3);
+            score3LablesList.Add(this.ScoreParty3Field4);
+            
+            score4LablesList.Add(this.ScoreParty4Field1);
+            score4LablesList.Add(this.ScoreParty4Field2);
+            score4LablesList.Add(this.ScoreParty4Field3);
+            score4LablesList.Add(this.ScoreParty4Field4);
+
+            score5LablesList.Add(this.ScoreParty5Field1);
+            score5LablesList.Add(this.ScoreParty5Field2);
+            score5LablesList.Add(this.ScoreParty5Field3);
+            score5LablesList.Add(this.ScoreParty5Field4);
+
+            score6LablesList.Add(this.ScoreParty6Field1);
+            score6LablesList.Add(this.ScoreParty6Field2);
+            score6LablesList.Add(this.ScoreParty6Field3);
+            score6LablesList.Add(this.ScoreParty6Field4);
+
+            allScoresLabelsList.Add(score1LablesList);
+            allScoresLabelsList.Add(score2LablesList);
+            allScoresLabelsList.Add(score3LablesList);
+            allScoresLabelsList.Add(score4LablesList);
+            allScoresLabelsList.Add(score5LablesList);
+            allScoresLabelsList.Add(score6LablesList);
+
+            goalColorsList.Add(this.SetField1);
+            goalColorsList.Add(this.SetField2);
+            goalColorsList.Add(this.SetField3);
+            goalColorsList.Add(this.SetField4);
+            
+            prepereButtonsLists();
+            prepareAllButtonsList();
+            
+            disableButtons(allButtonsList, ourMatch);
+            enableButtons(allButtonsList, ourMatch);
+            enableHitTestButtons(allButtonsList, ourMatch);
+
+
+        }
+        private void prepereButtonsLists ()
+        {
+            part1ButtonsList.Add(this.buttonPart1Field1);
+            part1ButtonsList.Add(this.buttonPart1Field2);
+            part1ButtonsList.Add(this.buttonPart1Field3);
+            part1ButtonsList.Add(this.buttonPart1Field4);
+
+            part2ButtonsList.Add(this.buttonPart2Field1);
+            part2ButtonsList.Add(this.buttonPart2Field2);
+            part2ButtonsList.Add(this.buttonPart2Field3);
+            part2ButtonsList.Add(this.buttonPart2Field4);
+
+            part3ButtonsList.Add(this.buttonPart3Field1);
+            part3ButtonsList.Add(this.buttonPart3Field2);
+            part3ButtonsList.Add(this.buttonPart3Field3);
+            part3ButtonsList.Add(this.buttonPart3Field4);
+
+            part4ButtonsList.Add(this.buttonPart4Field1);
+            part4ButtonsList.Add(this.buttonPart4Field2);
+            part4ButtonsList.Add(this.buttonPart4Field3);
+            part4ButtonsList.Add(this.buttonPart4Field4);
+
+            part5ButtonsList.Add(this.buttonPart5Field1);
+            part5ButtonsList.Add(this.buttonPart5Field2);
+            part5ButtonsList.Add(this.buttonPart5Field3);
+            part5ButtonsList.Add(this.buttonPart5Field4);
+
+            part6ButtonsList.Add(this.buttonPart6Field1);
+            part6ButtonsList.Add(this.buttonPart6Field2);
+            part6ButtonsList.Add(this.buttonPart6Field3);
+            part6ButtonsList.Add(this.buttonPart6Field4);
+        }
+        private void prepareAllButtonsList ()
+        {
+            allButtonsList.Add(this.part1ButtonsList);
+            allButtonsList.Add(this.part2ButtonsList);
+            allButtonsList.Add(this.part3ButtonsList);
+            allButtonsList.Add(this.part4ButtonsList);
+            allButtonsList.Add(this.part5ButtonsList);
+            allButtonsList.Add(this.part6ButtonsList);
+        }
+        private void enableButtons (List <List<Button>> usedButton, Match actualMatch)
+        {
+            int fieldsCounter;
+            for (fieldsCounter = 0; fieldsCounter < fieldNumber; fieldsCounter++)
+            {
+                usedButton[actualMatch.MatchCounter][fieldsCounter].IsEnabled = true;
+            }
+        }
+        private void enableHitTestButtons(List<List<Button>> usedButton, Match actualMatch)
+        {
+            int fieldsCounter;
+            for (fieldsCounter = 0; fieldsCounter < fieldNumber; fieldsCounter++)
+            {
+                usedButton[actualMatch.MatchCounter][fieldsCounter].IsHitTestVisible = true;
+            }
+        }
+        private void disableButtons(List<List<Button>> usedButton, Match actualMatch)
+        {
+            int fieldsCounter, matchCounter;
+            for (matchCounter = 0; matchCounter < matchNumber; matchCounter++)
+                for (fieldsCounter = 0; fieldsCounter < fieldNumber; fieldsCounter++)
+                {
+                    usedButton[matchCounter][fieldsCounter].IsEnabled = false;
+                }
+        }
+        private void disableHitTestButtons(List<List<Button>> usedButton, Match actualMatch)
+        {
+            int fieldsCounter, matchCounter;
+            for (matchCounter = 0; matchCounter < matchNumber; matchCounter++)
+                for (fieldsCounter = 0; fieldsCounter < fieldNumber; fieldsCounter++)
+                {
+                    usedButton[matchCounter][fieldsCounter].IsHitTestVisible = false;
+                }
         }
         public SolidColorBrush colorChange(Brush actualBackground)
         {
@@ -57,24 +217,45 @@ namespace CSharpAcademiProject
             }
             return newColor;
         }
-        public compareResult colorCompare(Brush actualBackground, Brush goalBackground)
+        private compareResult colorCompare(Brush actualBackground, Brush goalBackground)
         {
             if (actualBackground == goalBackground)
             {
                 return compareResult.equal;
             }
             else
+            {
                 return compareResult.notEqual;
+            }
+        }
+        private void calculateScore(List<List<Button>> actualField, List<Button> goalBackground)
+        {
+            List<compareResult> result;
+            result = new List<compareResult>();
+            result.Add(compareResult.equal);
+            result.Add(compareResult.equal);
+            result.Add(compareResult.equal);
+            result.Add(compareResult.equal);
+            int fieldsCounter;
+            for (fieldsCounter = 0; fieldsCounter < fieldNumber; fieldsCounter++)
+            {
+                result[fieldsCounter] = colorCompare(actualField[ourMatch.MatchCounter][fieldsCounter].Background, goalBackground[fieldsCounter].Background);
+                if (result[fieldsCounter] == compareResult.equal)
+                {
+                    allScoresLabelsList[ourMatch.MatchCounter][fieldsCounter].Background = Brushes.Black;
+                }
+            }
         }
         private void buttonSet_click(object sender, RoutedEventArgs e)
         {
-            compareResult result;
-            result = colorCompare(buttonPart6Field1.Background, SetField1.Background);
-            if (result == compareResult.equal)
+            calculateScore(allButtonsList, goalColorsList);
+            disableHitTestButtons(allButtonsList, ourMatch);
+            if (this.ourMatch.MatchCounter < matchNumber - 1)
             {
-                SetField2.Background = Brushes.Red;
+                this.ourMatch.MatchCounter++;
+                enableButtons(allButtonsList, ourMatch);
+                enableHitTestButtons(allButtonsList, ourMatch);
             }
-            Match ourMatch = new Match(1);
             //ODBLOKOWANIE NASTEPNYCH BUTTONOW
         }
 
