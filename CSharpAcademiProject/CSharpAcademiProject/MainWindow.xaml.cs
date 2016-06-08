@@ -189,7 +189,7 @@ namespace CSharpAcademiProject
             int fieldsCounter;
             for (fieldsCounter = 0; fieldsCounter < ourGame.fieldNumber; fieldsCounter++)
             {
-                usedButton[actualMatch.MatchCounter][fieldsCounter].IsEnabled = true;
+                usedButton[actualMatch.PlayCounter][fieldsCounter].IsEnabled = true;
             }
         }
 
@@ -198,7 +198,7 @@ namespace CSharpAcademiProject
             int fieldsCounter;
             for (fieldsCounter = 0; fieldsCounter < ourGame.fieldNumber; fieldsCounter++)
             {
-                usedButton[actualMatch.MatchCounter][fieldsCounter].IsHitTestVisible = true;
+                usedButton[actualMatch.PlayCounter][fieldsCounter].IsHitTestVisible = true;
             }
         }
 
@@ -313,12 +313,11 @@ namespace CSharpAcademiProject
         {
             ourMatch.calculateScore(allButtonsList, allScoresLabelsList, goalColorsList);
             disableHitTestButtons(allButtonsList, ourMatch);
-            if (this.ourMatch.MatchCounter < ourGame.matchNumber - 1)
+            if (this.ourMatch.PlayCounter < ourGame.matchNumber - 1)
             {
-                this.ourMatch.MatchCounter++;
+                this.ourMatch.PlayCounter++;
                 enableButtons(allButtonsList, ourMatch);
                 enableHitTestButtons(allButtonsList, ourMatch);
-
             }
         }
 

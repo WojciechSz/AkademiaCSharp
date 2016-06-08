@@ -11,14 +11,9 @@ namespace CSharpAcademiProject
 {
     class Match : Game
     {
-        public int MatchCounter
-        {
-            get;
-            set;
-        }
         public Match(int matchValue)
         {
-            this.MatchCounter = matchValue;
+            this.PlayCounter = matchValue;
         }
         public void calculateScore(List<List<Button>> actualField, List<List<Label>> allScoresLabelsList, List<Button> goalBackground)
         {
@@ -38,19 +33,19 @@ namespace CSharpAcademiProject
             int fieldsCounter, internalFieldsCounter;
             for (fieldsCounter = 0; fieldsCounter < fieldNumber; fieldsCounter++)
             {
-                result[fieldsCounter] = colorCompare(actualField[this.MatchCounter][fieldsCounter].Background, goalBackground[fieldsCounter].Background);
+                result[fieldsCounter] = colorCompare(actualField[this.PlayCounter][fieldsCounter].Background, goalBackground[fieldsCounter].Background);
                 if (result[fieldsCounter] == compareResult.equal)
                 {
-                    allScoresLabelsList[this.MatchCounter][fieldsCounter].Background = Brushes.Black;
+                    allScoresLabelsList[this.PlayCounter][fieldsCounter].Background = Brushes.Black;
                 }
                 if (result[fieldsCounter] == compareResult.notEqual) 
                 {
                     for (internalFieldsCounter = 0; internalFieldsCounter < fieldNumber; internalFieldsCounter++)
                     {
-                        resultWhite[internalFieldsCounter] = colorCompare(actualField[this.MatchCounter][fieldsCounter].Background, goalBackground[internalFieldsCounter].Background);
+                        resultWhite[internalFieldsCounter] = colorCompare(actualField[this.PlayCounter][fieldsCounter].Background, goalBackground[internalFieldsCounter].Background);
                         if (resultWhite[internalFieldsCounter] == compareResult.equal)
                         {
-                            allScoresLabelsList[this.MatchCounter][fieldsCounter].Background = Brushes.White;
+                            allScoresLabelsList[this.PlayCounter][fieldsCounter].Background = Brushes.White;
                             break;
                         }
                     }
