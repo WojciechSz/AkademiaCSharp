@@ -68,29 +68,29 @@ namespace CSharpAcademiProject
                 return compareResult.notEqual;
             }
         }
-        public void randomGoal(List<Button> goalColorList)
+        public int[] randomGoal(List<Button> goalColorList)
         {
-            //int[] fieldColorNumber = new int[] { 0, 1, 2, 3 };
-            // 6 -color number
-            int field1ColorNumber, field2ColorNumber, field3ColorNumber, field4ColorNumber;
-            field1ColorNumber = randomNumber(0, 6);
-            do
+            int[] fieldColorNumber = new int[] { this.colorNumber, this.colorNumber, this.colorNumber, this.colorNumber };
+            compareResult sameColor = compareResult.notEqual;
+            for(int actualField = 0; actualField < fieldNumber; actualField++)
             {
-                field2ColorNumber = randomNumber(0, 6);
-            } while (field2ColorNumber == field1ColorNumber);
-            do
-            {
-                field3ColorNumber = randomNumber(0, 6);
-            } while (field3ColorNumber == field2ColorNumber || field3ColorNumber == field1ColorNumber);
-            do
-            {
-                field4ColorNumber = randomNumber(0, 6);
-            } while (field4ColorNumber == field3ColorNumber || field4ColorNumber == field2ColorNumber || field4ColorNumber == field1ColorNumber);
-            
-            goalColorList[0].Content = field1ColorNumber;
-            goalColorList[1].Content = field2ColorNumber;
-            goalColorList[2].Content = field3ColorNumber;
-            goalColorList[3].Content = field4ColorNumber;
+                do
+                {
+                    sameColor = compareResult.notEqual;
+                    fieldColorNumber[actualField] = randomNumber(0, this.colorNumber);
+                    for (int anotherField = 0; anotherField < fieldNumber; anotherField++)
+                    {
+                        if (actualField != anotherField)
+                        {
+                            if(fieldColorNumber[actualField] == fieldColorNumber[anotherField])
+                            {
+                                sameColor = compareResult.equal;
+                            }
+                        }
+                    }
+                } while (sameColor == compareResult.equal);
+            }
+            return fieldColorNumber;
         }
         public int randomNumber(int lowerRange, int upperRange)
         {

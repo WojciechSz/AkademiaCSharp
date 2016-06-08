@@ -50,8 +50,10 @@ namespace CSharpAcademiProject
             prepareLists();
             buttonsInitialConditions();
 
-            ourMatch.randomGoal(goalColorsList);
+            //ourMatch.randomGoal(goalColorsList);
+            colorGoal(ourMatch.randomGoal(goalColorsList));
         }
+
         private void listInitialization()
         {
             part1ButtonsList = new List<Button>();
@@ -70,12 +72,14 @@ namespace CSharpAcademiProject
             allScoresLabelsList = new List<List<Label>>();
             goalColorsList = new List<Button>();
         }
+
         private void buttonsInitialConditions()
         {
             disableButtons(allButtonsList, ourMatch);
             enableButtons(allButtonsList, ourMatch);
             enableHitTestButtons(allButtonsList, ourMatch);
         }
+
         private void prepareLists()
         {
             prepareGoalColorsList();
@@ -84,6 +88,7 @@ namespace CSharpAcademiProject
             prepareButtonsLists();
             prepareAllButtonsList();
         }
+
         private void prepareGoalColorsList()
         {
             goalColorsList.Add(this.SetField1);
@@ -92,6 +97,7 @@ namespace CSharpAcademiProject
             goalColorsList.Add(this.SetField4);
 
         }
+
         private void prepareAllScoresList()
         {
             allScoresLabelsList.Add(score1LablesList);
@@ -101,6 +107,7 @@ namespace CSharpAcademiProject
             allScoresLabelsList.Add(score5LablesList);
             allScoresLabelsList.Add(score6LablesList);
         }
+
         private void prepareScoreLablesList()
         {
             score1LablesList.Add(this.ScoreParty1Field1);
@@ -133,6 +140,7 @@ namespace CSharpAcademiProject
             score6LablesList.Add(this.ScoreParty6Field3);
             score6LablesList.Add(this.ScoreParty6Field4);
         }
+
         private void prepareButtonsLists ()
         {
             part1ButtonsList.Add(this.buttonPart1Field1);
@@ -165,6 +173,7 @@ namespace CSharpAcademiProject
             part6ButtonsList.Add(this.buttonPart6Field3);
             part6ButtonsList.Add(this.buttonPart6Field4);
         }
+
         private void prepareAllButtonsList ()
         {
             allButtonsList.Add(this.part1ButtonsList);
@@ -174,6 +183,7 @@ namespace CSharpAcademiProject
             allButtonsList.Add(this.part5ButtonsList);
             allButtonsList.Add(this.part6ButtonsList);
         }
+
         private void enableButtons (List <List<Button>> usedButton, Match actualMatch)
         {
             int fieldsCounter;
@@ -182,6 +192,7 @@ namespace CSharpAcademiProject
                 usedButton[actualMatch.MatchCounter][fieldsCounter].IsEnabled = true;
             }
         }
+
         private void enableHitTestButtons(List<List<Button>> usedButton, Match actualMatch)
         {
             int fieldsCounter;
@@ -190,6 +201,7 @@ namespace CSharpAcademiProject
                 usedButton[actualMatch.MatchCounter][fieldsCounter].IsHitTestVisible = true;
             }
         }
+
         private void disableButtons(List<List<Button>> usedButton, Match actualMatch)
         {
             int fieldsCounter, matchCounter;
@@ -199,6 +211,7 @@ namespace CSharpAcademiProject
                     usedButton[matchCounter][fieldsCounter].IsEnabled = false;
                 }
         }
+
         private void disableHitTestButtons(List<List<Button>> usedButton, Match actualMatch)
         {
             int fieldsCounter, matchCounter;
@@ -208,6 +221,7 @@ namespace CSharpAcademiProject
                     usedButton[matchCounter][fieldsCounter].IsHitTestVisible = false;
                 }
         }
+
         private void buttonClickHandle(int thisMatch, int thisField)
         {
             int fieldCounter;
@@ -230,10 +244,44 @@ namespace CSharpAcademiProject
                 }
             }
         }
+
+        public void colorGoal (int[] choosenColors)
+        {
+            SolidColorBrush newColor;
+            for (int actualField = 0; actualField < ourMatch.fieldNumber; actualField++)
+            {
+                switch (choosenColors[actualField])
+                {
+                    case 0:
+                        newColor = Brushes.Red;
+                        break;
+                    case 1:
+                        newColor = Brushes.Orange;
+                        break;
+                    case 2:
+                        newColor = Brushes.Yellow;
+                        break;
+                    case 3:
+                        newColor = Brushes.Violet;
+                        break;
+                    case 4:
+                        newColor = Brushes.Blue;
+                        break;
+                    case 5:
+                        newColor = Brushes.Green;
+                        break;
+                    default:
+                        newColor = Brushes.Red;
+                        break;
+                }
+                goalColorsList[actualField].Background = newColor;
+            }
+        }
+
         public SolidColorBrush colorChange(Brush actualBackground)
         {
             string actualBackgroundString;
-            SolidColorBrush newColor = Brushes.Red;
+            SolidColorBrush newColor;
             actualBackgroundString = actualBackground.ToString();
             switch (actualBackgroundString)
             {
@@ -256,6 +304,7 @@ namespace CSharpAcademiProject
                     newColor = Brushes.Green;
                     break;
                 default:
+                    newColor = Brushes.Red;
                     break;
             }
             return newColor;
@@ -269,8 +318,8 @@ namespace CSharpAcademiProject
                 this.ourMatch.MatchCounter++;
                 enableButtons(allButtonsList, ourMatch);
                 enableHitTestButtons(allButtonsList, ourMatch);
+
             }
-            //ODBLOKOWANIE NASTEPNYCH BUTTONOW
         }
 
         private void buttonPart6Field1_Click(object sender, RoutedEventArgs e)
@@ -391,6 +440,11 @@ namespace CSharpAcademiProject
         private void buttonPart1Field4_Click(object sender, RoutedEventArgs e)
         {
             buttonClickHandle(0, 3);
+        }
+
+        private void buttonNewGame_click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

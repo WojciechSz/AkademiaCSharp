@@ -18,20 +18,21 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" >
-            <Button Name="buttonSet" Height="30" Width="30" Margin="10" Click="buttonSet_click" Cursor="Hand"/>
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0">
+            <Button Name="buttonNewGame" Content="New Game" Height="30" Width="80" Margin="10" Click="buttonNewGame_click" Cursor="Hand"/>
+            <Button Name="buttonSet" Content="Confirm" Height="30" Width="80" Margin="5" Click="buttonSet_click" Cursor="Hand"/>
         </StackPanel>
         <StackPanel Grid.Column="4" Grid.Row="0" Grid.RowSpan="2" >
-            <Button Name="SetField1" Height="40" Width="25" Margin="10" Background="Red" IsEnabled="False" IsHitTestVisible="False"/>
+            <Button Name="SetField1" Height="40" Width="25" Margin="10"  IsHitTestVisible="False"/>
         </StackPanel>
         <StackPanel Grid.Column="5" Grid.Row="0" Grid.RowSpan="2" >
-            <Button Name="SetField2" Height="40" Width="25" Margin="10" Background="Blue" IsEnabled="False" IsHitTestVisible="False"/>
+            <Button Name="SetField2" Height="40" Width="25" Margin="10" IsHitTestVisible="False"/>
         </StackPanel>
         <StackPanel Grid.Column="6" Grid.Row="0" Grid.RowSpan="2" >
-            <Button Name="SetField3" Height="40" Width="25" Margin="10" Background="Green" IsEnabled="False" IsHitTestVisible="False"/>
+            <Button Name="SetField3" Height="40" Width="25" Margin="10"  IsHitTestVisible="False"/>
         </StackPanel>
         <StackPanel Grid.Column="7" Grid.Row="0" Grid.RowSpan="2" >
-            <Button Name="SetField4" Height="40" Width="25" Margin="10" Background="Violet" IsEnabled="False" IsHitTestVisible="False"/>
+            <Button Name="SetField4" Height="40" Width="25" Margin="10"  IsHitTestVisible="False"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
             <Label Name="ScoreParty6Field1" Height="20" Width="25" Margin="5" Background="Gray"/>

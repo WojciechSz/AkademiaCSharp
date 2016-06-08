@@ -11,6 +11,7 @@ namespace CSharpAcademiProject
     {
         public int matchNumber = 6;
         public int fieldNumber = 4;
+        public int colorNumber = 6;
         public int MaxMatchNumber
         {
             get;
