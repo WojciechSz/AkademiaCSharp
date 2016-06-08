@@ -43,14 +43,13 @@ namespace CSharpAcademiProject
         {
             InitializeComponent();
 
-            ourGame = new Game();
+            ourGame = new Game(0);
             ourMatch = new Match(0);
             
             listInitialization();
             prepareLists();
             buttonsInitialConditions();
 
-            //ourMatch.randomGoal(goalColorsList);
             colorGoal(ourMatch.randomGoal(goalColorsList));
         }
 
@@ -78,6 +77,19 @@ namespace CSharpAcademiProject
             disableButtons(allButtonsList, ourMatch);
             enableButtons(allButtonsList, ourMatch);
             enableHitTestButtons(allButtonsList, ourMatch);
+            defaultColors();
+        }
+
+        private void defaultColors()
+        {
+            for(int actualPart = 0; actualPart < ourMatch.matchNumber; actualPart++)
+            {
+                for (int actualField = 0; actualField < ourMatch.fieldNumber; actualField++)
+                {
+                    allButtonsList[actualPart][actualField].Background = Brushes.LightGray;
+                    allScoresLabelsList[actualPart][actualField].Background = Brushes.Gray;
+                }
+            }
         }
 
         private void prepareLists()
@@ -319,6 +331,8 @@ namespace CSharpAcademiProject
                 enableButtons(allButtonsList, ourMatch);
                 enableHitTestButtons(allButtonsList, ourMatch);
             }
+            goalColorsList[0].Content = ourGame.PlayCounter;
+            goalColorsList[1].Content = ourMatch.PlayCounter;
         }
 
         private void buttonPart6Field1_Click(object sender, RoutedEventArgs e)
@@ -443,7 +457,11 @@ namespace CSharpAcademiProject
 
         private void buttonNewGame_click(object sender, RoutedEventArgs e)
         {
-
+            this.ourGame.PlayCounter++;
+            this.ourMatch.PlayCounter = 0;
+            buttonsInitialConditions();
+            goalColorsList[0].Content = this.ourGame.PlayCounter;
+            goalColorsList[1].Content = ourMatch.PlayCounter;
         }
     }
 }

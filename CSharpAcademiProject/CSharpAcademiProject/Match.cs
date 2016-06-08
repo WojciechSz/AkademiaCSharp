@@ -11,10 +11,16 @@ namespace CSharpAcademiProject
 {
     class Match : Game
     {
-        public Match(int matchValue)
+        public Match(int playValue):base(playValue)
         {
-            this.PlayCounter = matchValue;
+            this.PlayCounter = playValue;
+            MatchScore = new List<scoreMarker>();
         }
+        public List<scoreMarker> MatchScore
+        {
+            get;
+            set;
+        }  
         public void calculateScore(List<List<Button>> actualField, List<List<Label>> allScoresLabelsList, List<Button> goalBackground)
         {
             List<compareResult> result;
@@ -37,6 +43,7 @@ namespace CSharpAcademiProject
                 if (result[fieldsCounter] == compareResult.equal)
                 {
                     allScoresLabelsList[this.PlayCounter][fieldsCounter].Background = Brushes.Black;
+                    this.MatchScore.Add(scoreMarker.Victory);
                 }
                 if (result[fieldsCounter] == compareResult.notEqual) 
                 {
@@ -46,11 +53,18 @@ namespace CSharpAcademiProject
                         if (resultWhite[internalFieldsCounter] == compareResult.equal)
                         {
                             allScoresLabelsList[this.PlayCounter][fieldsCounter].Background = Brushes.White;
+                            this.MatchScore.Add(scoreMarker.Victory);
                             break;
+                        }
+                        else 
+                        {
+                            allScoresLabelsList[this.PlayCounter][fieldsCounter].Background = Brushes.DimGray;
+                            this.MatchScore.Add(scoreMarker.Defeat);
                         }
                     }
                 }
             }
+            Score.Add(MatchScore);
         }
         public compareResult colorCompare(Brush actualBackground, Brush goalBackground)
         {

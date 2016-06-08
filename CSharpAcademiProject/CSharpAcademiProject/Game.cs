@@ -32,15 +32,15 @@ namespace CSharpAcademiProject
             get;
             set;
         }
-        public List <int> Score
+        public List<List<scoreMarker>> Score
         {
             get;
             set;
-        }   
-        public Game()
+        }  
+        public Game(int playValue)
         {
-            this.PlayCounter = 1;
-            Score = new List<int>();
+            this.PlayCounter = playValue;
+            Score = new List<List<scoreMarker>>();
         }
         public void decideScore()
         {
