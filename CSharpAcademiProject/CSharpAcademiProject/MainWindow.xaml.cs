@@ -50,6 +50,7 @@ namespace CSharpAcademiProject
             prepareLists();
             buttonsInitialConditions();
 
+            ourMatch.randomGoal(goalColorsList);
         }
         private void listInitialization()
         {
@@ -209,9 +210,9 @@ namespace CSharpAcademiProject
         }
         private void buttonClickHandle(int thisMatch, int thisField)
         {
-            this.allButtonsList[thisMatch][thisField].Background = colorChange(this.allButtonsList[thisMatch][thisField].Background);
             int fieldCounter;
             bool changeMade;
+            this.allButtonsList[thisMatch][thisField].Background = colorChange(this.allButtonsList[thisMatch][thisField].Background);
             for (fieldCounter = 0; fieldCounter < ourGame.fieldNumber; fieldCounter++)
             {
                 changeMade = false;
@@ -225,7 +226,7 @@ namespace CSharpAcademiProject
                 }
                 if(changeMade == true)
                 {
-                    fieldCounter = 0;
+                    fieldCounter = -1;
                 }
             }
         }

@@ -68,5 +68,34 @@ namespace CSharpAcademiProject
                 return compareResult.notEqual;
             }
         }
+        public void randomGoal(List<Button> goalColorList)
+        {
+            //int[] fieldColorNumber = new int[] { 0, 1, 2, 3 };
+            // 6 -color number
+            int field1ColorNumber, field2ColorNumber, field3ColorNumber, field4ColorNumber;
+            field1ColorNumber = randomNumber(0, 6);
+            do
+            {
+                field2ColorNumber = randomNumber(0, 6);
+            } while (field2ColorNumber == field1ColorNumber);
+            do
+            {
+                field3ColorNumber = randomNumber(0, 6);
+            } while (field3ColorNumber == field2ColorNumber || field3ColorNumber == field1ColorNumber);
+            do
+            {
+                field4ColorNumber = randomNumber(0, 6);
+            } while (field4ColorNumber == field3ColorNumber || field4ColorNumber == field2ColorNumber || field4ColorNumber == field1ColorNumber);
+            
+            goalColorList[0].Content = field1ColorNumber;
+            goalColorList[1].Content = field2ColorNumber;
+            goalColorList[2].Content = field3ColorNumber;
+            goalColorList[3].Content = field4ColorNumber;
+        }
+        public int randomNumber(int lowerRange, int upperRange)
+        {
+            Random number = new Random();
+            return number.Next(lowerRange, upperRange);
+        }
     } 
 }
