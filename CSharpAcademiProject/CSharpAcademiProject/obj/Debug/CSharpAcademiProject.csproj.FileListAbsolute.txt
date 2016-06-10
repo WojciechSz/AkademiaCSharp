@@ -1,15 +1,3 @@
-D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\bin\Debug\CSharpAcademiProject.exe.config
-D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\MainWindow.baml
-D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\MainWindow.g.cs
-D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\App.g.cs
-D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject_MarkupCompile.cache
-D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.g.resources
-D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.Properties.Resources.resources
-D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.csproj.GenerateResource.Cache
-D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\bin\Debug\CSharpAcademiProject.exe
-D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\bin\Debug\CSharpAcademiProject.pdb
-D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.exe
-D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.pdb
 C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\bin\Debug\CSharpAcademiProject.exe.config
 C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.exe
 C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.pdb
@@ -35,4 +23,15 @@ C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSha
 C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.Properties.Resources.resources
 C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.csproj.GenerateResource.Cache
 C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.csprojResolveAssemblyReference.cache
-D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.csprojResolveAssemblyReference.cache
+D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\bin\Debug\CSharpAcademiProject.exe.config
+D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\bin\Debug\CSharpAcademiProject.exe
+D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\bin\Debug\CSharpAcademiProject.pdb
+D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\MainWindow.baml
+D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\MainWindow.g.cs
+D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\App.g.cs
+D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject_MarkupCompile.cache
+D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.g.resources
+D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.Properties.Resources.resources
+D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.csproj.GenerateResource.Cache
+D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.exe
+D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.pdb

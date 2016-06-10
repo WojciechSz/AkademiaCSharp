@@ -21,7 +21,7 @@ namespace CSharpAcademiProject
             get;
             set;
         }  
-        public void calculateScore(List<List<Button>> actualField, List<List<Label>> allScoresLabelsList, List<Button> goalBackground)
+        public void calculateScore(List<List<Button>> actualField, List<List<Button>> allScoresLabelsList, List<Button> goalBackground)
         {
             List<compareResult> result;
             result = new List<compareResult>();
@@ -36,30 +36,36 @@ namespace CSharpAcademiProject
             resultWhite.Add(compareResult.equal);
             resultWhite.Add(compareResult.equal);
 
-            int fieldsCounter, internalFieldsCounter;
-            for (fieldsCounter = 0; fieldsCounter < fieldNumber; fieldsCounter++)
+            int[] randomScoreField;
+            int scoreFieldCounter = 0;
+
+            randomScoreField = this.randomGoal(this.fieldNumber);
+            for (int fieldsCounter = 0; fieldsCounter < this.fieldNumber; fieldsCounter++)
             {
                 result[fieldsCounter] = colorCompare(actualField[this.PlayCounter][fieldsCounter].Background, goalBackground[fieldsCounter].Background);
                 if (result[fieldsCounter] == compareResult.equal)
                 {
-                    allScoresLabelsList[this.PlayCounter][fieldsCounter].Background = Brushes.Black;
+                    allScoresLabelsList[this.PlayCounter][randomScoreField[fieldsCounter]].Background = Brushes.Black;
                     this.MatchScore.Add(scoreMarker.Victory);
+                    scoreFieldCounter++;
                 }
-                if (result[fieldsCounter] == compareResult.notEqual) 
+                if (result[fieldsCounter] == compareResult.notEqual)
                 {
-                    for (internalFieldsCounter = 0; internalFieldsCounter < fieldNumber; internalFieldsCounter++)
+                    for (int internalFieldsCounter = 0; internalFieldsCounter < fieldNumber; internalFieldsCounter++)
                     {
                         resultWhite[internalFieldsCounter] = colorCompare(actualField[this.PlayCounter][fieldsCounter].Background, goalBackground[internalFieldsCounter].Background);
                         if (resultWhite[internalFieldsCounter] == compareResult.equal)
                         {
-                            allScoresLabelsList[this.PlayCounter][fieldsCounter].Background = Brushes.White;
-                            this.MatchScore.Add(scoreMarker.Victory);
+                            allScoresLabelsList[this.PlayCounter][randomScoreField[fieldsCounter]].Background = Brushes.White;
+                            this.MatchScore.Add(scoreMarker.Outstanding);
+                            scoreFieldCounter++;
                             break;
                         }
-                        else 
+                        else
                         {
-                            allScoresLabelsList[this.PlayCounter][fieldsCounter].Background = Brushes.DimGray;
+                            allScoresLabelsList[this.PlayCounter][randomScoreField[fieldsCounter]].Background = Brushes.DimGray;
                             this.MatchScore.Add(scoreMarker.Defeat);
+                            scoreFieldCounter++;
                         }
                     }
                 }
@@ -77,16 +83,16 @@ namespace CSharpAcademiProject
                 return compareResult.notEqual;
             }
         }
-        public int[] randomGoal(List<Button> goalColorList)
+        public int[] randomGoal(int maxNumber)
         {
-            int[] fieldColorNumber = new int[] { this.colorNumber, this.colorNumber, this.colorNumber, this.colorNumber };
+            int[] fieldColorNumber = new int[] { maxNumber, maxNumber, maxNumber, maxNumber };
             compareResult sameColor = compareResult.notEqual;
             for(int actualField = 0; actualField < fieldNumber; actualField++)
             {
                 do
                 {
                     sameColor = compareResult.notEqual;
-                    fieldColorNumber[actualField] = randomNumber(0, this.colorNumber);
+                    fieldColorNumber[actualField] = randomNumber(0, maxNumber);
                     for (int anotherField = 0; anotherField < fieldNumber; anotherField++)
                     {
                         if (actualField != anotherField)

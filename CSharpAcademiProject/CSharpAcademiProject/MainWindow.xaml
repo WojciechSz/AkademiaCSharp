@@ -35,32 +35,32 @@
             <Button Name="SetField4" Height="40" Width="25" Margin="10"  IsHitTestVisible="False"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
-            <Label Name="ScoreParty6Field1" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty6Field2" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty5Field1" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty5Field2" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty4Field1" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty4Field2" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty3Field1" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty3Field2" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty2Field1" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty2Field2" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty1Field1" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty1Field2" Height="20" Width="25" Margin="5" Background="Gray"/>
+            <Button Name="ScoreParty6Field1" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty6Field2" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty5Field1" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty5Field2" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty4Field1" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty4Field2" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty3Field1" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty3Field2" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty2Field1" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty2Field2" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty1Field1" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty1Field2" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="1" Grid.RowSpan="2">
-            <Label Name="ScoreParty6Field3" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty6Field4" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty5Field3" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty5Field4" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty4Field3" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty4Field4" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty3Field3" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty3Field4" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty2Field3" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty2Field4" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty1Field3" Height="20" Width="25" Margin="5" Background="Gray"/>
-            <Label Name="ScoreParty1Field4" Height="20" Width="25" Margin="5" Background="Gray"/>
+            <Button Name="ScoreParty6Field3" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty6Field4" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty5Field3" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty5Field4" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty4Field3" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty4Field4" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty3Field3" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty3Field4" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty2Field3" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty2Field4" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty1Field3" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
+            <Button Name="ScoreParty1Field4" Height="20" Width="25" Margin="5" Background="Gray" IsHitTestVisible="False"/>
         </StackPanel>
         <StackPanel Grid.Column="4" Grid.Row="1" Grid.RowSpan="2" >
             <Button Name="buttonPart6Field1"  Height="40" Width="25" Margin="10" Click="buttonPart6Field1_Click" IsHitTestVisible="False" Cursor="Hand"/>

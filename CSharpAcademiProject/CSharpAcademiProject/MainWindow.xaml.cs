@@ -28,13 +28,13 @@ namespace CSharpAcademiProject
         public List<Button> part4ButtonsList;
         public List<Button> part5ButtonsList;
         public List<Button> part6ButtonsList;
-        public List<List<Label>> allScoresLabelsList;
-        public List<Label> score1LablesList;
-        public List<Label> score2LablesList;
-        public List<Label> score3LablesList;
-        public List<Label> score4LablesList;
-        public List<Label> score5LablesList;
-        public List<Label> score6LablesList;
+        public List<List<Button>> allScoresButtonsList;
+        public List<Button> score1ButtonsList;
+        public List<Button> score2ButtonsList;
+        public List<Button> score3ButtonsList;
+        public List<Button> score4ButtonsList;
+        public List<Button> score5ButtonsList;
+        public List<Button> score6ButtonsList;
         public List<Button> goalColorsList;
         private Game ourGame;
         private Match ourMatch;
@@ -50,7 +50,18 @@ namespace CSharpAcademiProject
             prepareLists();
             buttonsInitialConditions();
 
-            colorGoal(ourMatch.randomGoal(goalColorsList));
+            colorGoal(ourMatch.randomGoal(ourMatch.colorNumber));
+
+            int[] randomScoreField;
+
+            // TO JEST GOWNO DO USUNIECIA
+            randomScoreField = ourMatch.randomGoal(ourMatch.fieldNumber);
+            score1ButtonsList[0].Content = randomScoreField[0];
+            score1ButtonsList[1].Content = randomScoreField[1];
+            score1ButtonsList[2].Content = randomScoreField[2];
+            score1ButtonsList[3].Content = randomScoreField[3];
+            // 
+
         }
 
         private void listInitialization()
@@ -62,13 +73,13 @@ namespace CSharpAcademiProject
             part5ButtonsList = new List<Button>();
             part6ButtonsList = new List<Button>();
             allButtonsList = new List<List<Button>>();
-            score1LablesList = new List<Label>();
-            score2LablesList = new List<Label>();
-            score3LablesList = new List<Label>();
-            score4LablesList = new List<Label>();
-            score5LablesList = new List<Label>();
-            score6LablesList = new List<Label>();
-            allScoresLabelsList = new List<List<Label>>();
+            score1ButtonsList = new List<Button>();
+            score2ButtonsList = new List<Button>();
+            score3ButtonsList = new List<Button>();
+            score4ButtonsList = new List<Button>();
+            score5ButtonsList = new List<Button>();
+            score6ButtonsList = new List<Button>();
+            allScoresButtonsList = new List<List<Button>>();
             goalColorsList = new List<Button>();
         }
 
@@ -87,7 +98,7 @@ namespace CSharpAcademiProject
                 for (int actualField = 0; actualField < ourMatch.fieldNumber; actualField++)
                 {
                     allButtonsList[actualPart][actualField].Background = Brushes.LightGray;
-                    allScoresLabelsList[actualPart][actualField].Background = Brushes.Gray;
+                    allScoresButtonsList[actualPart][actualField].Background = Brushes.Gray;
                 }
             }
         }
@@ -96,7 +107,7 @@ namespace CSharpAcademiProject
         {
             prepareGoalColorsList();
             prepareAllScoresList();
-            prepareScoreLablesList();
+            prepareScoreButtonsList();
             prepareButtonsLists();
             prepareAllButtonsList();
         }
@@ -112,45 +123,45 @@ namespace CSharpAcademiProject
 
         private void prepareAllScoresList()
         {
-            allScoresLabelsList.Add(score1LablesList);
-            allScoresLabelsList.Add(score2LablesList);
-            allScoresLabelsList.Add(score3LablesList);
-            allScoresLabelsList.Add(score4LablesList);
-            allScoresLabelsList.Add(score5LablesList);
-            allScoresLabelsList.Add(score6LablesList);
+            allScoresButtonsList.Add(score1ButtonsList);
+            allScoresButtonsList.Add(score2ButtonsList);
+            allScoresButtonsList.Add(score3ButtonsList);
+            allScoresButtonsList.Add(score4ButtonsList);
+            allScoresButtonsList.Add(score5ButtonsList);
+            allScoresButtonsList.Add(score6ButtonsList);
         }
 
-        private void prepareScoreLablesList()
+        private void prepareScoreButtonsList()
         {
-            score1LablesList.Add(this.ScoreParty1Field1);
-            score1LablesList.Add(this.ScoreParty1Field2);
-            score1LablesList.Add(this.ScoreParty1Field3);
-            score1LablesList.Add(this.ScoreParty1Field4);
+            score1ButtonsList.Add(this.ScoreParty1Field1);
+            score1ButtonsList.Add(this.ScoreParty1Field2);
+            score1ButtonsList.Add(this.ScoreParty1Field3);
+            score1ButtonsList.Add(this.ScoreParty1Field4);
             
-            score2LablesList.Add(this.ScoreParty2Field1);
-            score2LablesList.Add(this.ScoreParty2Field2);
-            score2LablesList.Add(this.ScoreParty2Field3);
-            score2LablesList.Add(this.ScoreParty2Field4);
+            score2ButtonsList.Add(this.ScoreParty2Field1);
+            score2ButtonsList.Add(this.ScoreParty2Field2);
+            score2ButtonsList.Add(this.ScoreParty2Field3);
+            score2ButtonsList.Add(this.ScoreParty2Field4);
             
-            score3LablesList.Add(this.ScoreParty3Field1);
-            score3LablesList.Add(this.ScoreParty3Field2);
-            score3LablesList.Add(this.ScoreParty3Field3);
-            score3LablesList.Add(this.ScoreParty3Field4);
+            score3ButtonsList.Add(this.ScoreParty3Field1);
+            score3ButtonsList.Add(this.ScoreParty3Field2);
+            score3ButtonsList.Add(this.ScoreParty3Field3);
+            score3ButtonsList.Add(this.ScoreParty3Field4);
             
-            score4LablesList.Add(this.ScoreParty4Field1);
-            score4LablesList.Add(this.ScoreParty4Field2);
-            score4LablesList.Add(this.ScoreParty4Field3);
-            score4LablesList.Add(this.ScoreParty4Field4);
+            score4ButtonsList.Add(this.ScoreParty4Field1);
+            score4ButtonsList.Add(this.ScoreParty4Field2);
+            score4ButtonsList.Add(this.ScoreParty4Field3);
+            score4ButtonsList.Add(this.ScoreParty4Field4);
 
-            score5LablesList.Add(this.ScoreParty5Field1);
-            score5LablesList.Add(this.ScoreParty5Field2);
-            score5LablesList.Add(this.ScoreParty5Field3);
-            score5LablesList.Add(this.ScoreParty5Field4);
+            score5ButtonsList.Add(this.ScoreParty5Field1);
+            score5ButtonsList.Add(this.ScoreParty5Field2);
+            score5ButtonsList.Add(this.ScoreParty5Field3);
+            score5ButtonsList.Add(this.ScoreParty5Field4);
 
-            score6LablesList.Add(this.ScoreParty6Field1);
-            score6LablesList.Add(this.ScoreParty6Field2);
-            score6LablesList.Add(this.ScoreParty6Field3);
-            score6LablesList.Add(this.ScoreParty6Field4);
+            score6ButtonsList.Add(this.ScoreParty6Field1);
+            score6ButtonsList.Add(this.ScoreParty6Field2);
+            score6ButtonsList.Add(this.ScoreParty6Field3);
+            score6ButtonsList.Add(this.ScoreParty6Field4);
         }
 
         private void prepareButtonsLists ()
@@ -323,7 +334,7 @@ namespace CSharpAcademiProject
         }
         private void buttonSet_click(object sender, RoutedEventArgs e)
         {
-            ourMatch.calculateScore(allButtonsList, allScoresLabelsList, goalColorsList);
+            ourMatch.calculateScore(allButtonsList, allScoresButtonsList, goalColorsList);
             disableHitTestButtons(allButtonsList, ourMatch);
             if (this.ourMatch.PlayCounter < ourGame.matchNumber - 1)
             {
@@ -462,6 +473,7 @@ namespace CSharpAcademiProject
             buttonsInitialConditions();
             goalColorsList[0].Content = this.ourGame.PlayCounter;
             goalColorsList[1].Content = ourMatch.PlayCounter;
+            colorGoal(ourMatch.randomGoal(ourMatch.colorNumber));
         }
     }
 }
