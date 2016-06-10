@@ -35,3 +35,4 @@ C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSha
 C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.Properties.Resources.resources
 C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.csproj.GenerateResource.Cache
 C:\Users\wszycax\Documents\Visual Studio 2013\Projects\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.csprojResolveAssemblyReference.cache
+D:\GIT\AkademiaCSharp\CSharpAcademiProject\CSharpAcademiProject\obj\Debug\CSharpAcademiProject.csprojResolveAssemblyReference.cache

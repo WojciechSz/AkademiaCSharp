@@ -372,7 +372,7 @@ namespace CSharpAcademiProject
 
         private void buttonPart5Field2_Click(object sender, RoutedEventArgs e)
         {
-            buttonClickHandle(5, 1);
+            buttonClickHandle(4, 1);
         }
 
         private void buttonPart4Field2_Click(object sender, RoutedEventArgs e)
