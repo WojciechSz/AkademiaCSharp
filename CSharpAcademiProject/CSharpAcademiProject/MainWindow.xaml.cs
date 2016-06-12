@@ -38,6 +38,7 @@ namespace CSharpAcademiProject
         public List<Button> goalColorsList;
         private Game ourGame;
         private Match ourMatch;
+        private ExceptionHandling ourException;
         
         public MainWindow()
         {
@@ -45,22 +46,13 @@ namespace CSharpAcademiProject
 
             ourGame = new Game(0);
             ourMatch = new Match(0);
+            ourException = new ExceptionHandling();
             
             listInitialization();
             prepareLists();
             buttonsInitialConditions();
 
             colorGoal(ourMatch.randomGoal(ourMatch.colorNumber));
-
-            int[] randomScoreField;
-
-            // TO JEST GOWNO DO USUNIECIA
-            randomScoreField = ourMatch.randomGoal(ourMatch.fieldNumber);
-            score1ButtonsList[0].Content = randomScoreField[0];
-            score1ButtonsList[1].Content = randomScoreField[1];
-            score1ButtonsList[2].Content = randomScoreField[2];
-            score1ButtonsList[3].Content = randomScoreField[3];
-            // 
 
         }
 
@@ -86,6 +78,7 @@ namespace CSharpAcademiProject
         private void buttonsInitialConditions()
         {
             disableButtons(allButtonsList, ourMatch);
+            disableButtons(goalColorsList, ourMatch);
             enableButtons(allButtonsList, ourMatch);
             enableHitTestButtons(allButtonsList, ourMatch);
             defaultColors();
@@ -93,13 +86,28 @@ namespace CSharpAcademiProject
 
         private void defaultColors()
         {
-            for(int actualPart = 0; actualPart < ourMatch.matchNumber; actualPart++)
+            try
             {
-                for (int actualField = 0; actualField < ourMatch.fieldNumber; actualField++)
+                for (int actualPart = 0; actualPart < ourMatch.matchNumber; actualPart++)
                 {
-                    allButtonsList[actualPart][actualField].Background = Brushes.LightGray;
-                    allScoresButtonsList[actualPart][actualField].Background = Brushes.Gray;
+                    for (int actualField = 0; actualField < ourMatch.fieldNumber; actualField++)
+                    {
+                        allButtonsList[actualPart][actualField].Background = Brushes.LightGray;
+                        allScoresButtonsList[actualPart][actualField].Background = Brushes.Gray;
+                    }
                 }
+            }
+            catch(ArgumentOutOfRangeException catchedException)
+            {
+                MessageBox.Show("Error - Exception occure - method: defaultColors()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
+            }
+            catch(Exception catchedException)
+            {
+                MessageBox.Show("Error - Exception occure - method: defaultColors()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
             }
         }
 
@@ -207,42 +215,152 @@ namespace CSharpAcademiProject
             allButtonsList.Add(this.part6ButtonsList);
         }
 
-        private void enableButtons (List <List<Button>> usedButton, Match actualMatch)
+        private void enableButtons(List <List<Button>> usedButton, Match actualMatch)
         {
             int fieldsCounter;
-            for (fieldsCounter = 0; fieldsCounter < ourGame.fieldNumber; fieldsCounter++)
+            try
             {
-                usedButton[actualMatch.PlayCounter][fieldsCounter].IsEnabled = true;
+                for (fieldsCounter = 0; fieldsCounter < ourGame.fieldNumber; fieldsCounter++)
+                {
+                    usedButton[actualMatch.PlayCounter][fieldsCounter].IsEnabled = true;
+                }
             }
+            catch (ArgumentOutOfRangeException catchedException)
+            {
+                MessageBox.Show("Error - Exception occure - method: enableButtons()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
+            }
+            catch (Exception catchedException)
+            {
+                MessageBox.Show("Error - Exception occure  - method: enableButtons()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
+            }
+            buttonSet.IsEnabled = true;
+        }
+        private void enableButtons(List<Button> usedButton, Match actualMatch)
+        {
+            int fieldsCounter;
+            try
+            {
+                for (fieldsCounter = 0; fieldsCounter < ourGame.fieldNumber; fieldsCounter++)
+                {
+                    usedButton[fieldsCounter].IsEnabled = true;
+                }
+            }
+            catch (ArgumentOutOfRangeException catchedException)
+            {
+                MessageBox.Show("Error - Exception occure - method: enableButtons()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
+            }
+            catch (Exception catchedException)
+            {
+                MessageBox.Show("Error - Exception occure  - method: enableButtons()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
+            }
+            buttonSet.IsEnabled = true;
         }
 
         private void enableHitTestButtons(List<List<Button>> usedButton, Match actualMatch)
         {
             int fieldsCounter;
-            for (fieldsCounter = 0; fieldsCounter < ourGame.fieldNumber; fieldsCounter++)
+            try
             {
-                usedButton[actualMatch.PlayCounter][fieldsCounter].IsHitTestVisible = true;
+                for (fieldsCounter = 0; fieldsCounter < ourGame.fieldNumber; fieldsCounter++)
+                {
+                    usedButton[actualMatch.PlayCounter][fieldsCounter].IsHitTestVisible = true;
+                }
+            }
+            catch (ArgumentOutOfRangeException catchedException)
+            {
+                MessageBox.Show("Error - Exception occure - method: enableHitTestButtons()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
+            }
+            catch (Exception catchedException)
+            {
+                MessageBox.Show("Error - Exception occure  - method: enableHitTestButtons()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
             }
         }
 
         private void disableButtons(List<List<Button>> usedButton, Match actualMatch)
         {
             int fieldsCounter, matchCounter;
-            for (matchCounter = 0; matchCounter < ourGame.matchNumber; matchCounter++)
+            try
+            {
+                for (matchCounter = 0; matchCounter < ourGame.matchNumber; matchCounter++)
+                {
+                    for (fieldsCounter = 0; fieldsCounter < ourGame.fieldNumber; fieldsCounter++)
+                    {
+                        usedButton[matchCounter][fieldsCounter].IsEnabled = false;
+                    }
+                }
+            }
+            catch (ArgumentOutOfRangeException catchedException)
+            {
+                MessageBox.Show("Error - Exception occure - method: disableButtons()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
+            }
+            catch (Exception catchedException)
+            {
+                MessageBox.Show("Error - Exception occure  - method: disableButtons()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
+            }
+        }
+        private void disableButtons(List<Button> usedButton, Match actualMatch)
+        {
+            int fieldsCounter;
+            try
+            {
                 for (fieldsCounter = 0; fieldsCounter < ourGame.fieldNumber; fieldsCounter++)
                 {
-                    usedButton[matchCounter][fieldsCounter].IsEnabled = false;
+                    usedButton[fieldsCounter].IsEnabled = false;
                 }
+            }
+            catch (ArgumentOutOfRangeException catchedException)
+            {
+                MessageBox.Show("Error - Exception occure - method: disableButtons()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
+            }
+            catch (Exception catchedException)
+            {
+                MessageBox.Show("Error - Exception occure  - method: disableButtons()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
+            }
         }
 
         private void disableHitTestButtons(List<List<Button>> usedButton, Match actualMatch)
         {
             int fieldsCounter, matchCounter;
-            for (matchCounter = 0; matchCounter < ourGame.matchNumber; matchCounter++)
-                for (fieldsCounter = 0; fieldsCounter < ourGame.fieldNumber; fieldsCounter++)
-                {
-                    usedButton[matchCounter][fieldsCounter].IsHitTestVisible = false;
-                }
+            try
+            {
+                for (matchCounter = 0; matchCounter < ourGame.matchNumber; matchCounter++)
+                    for (fieldsCounter = 0; fieldsCounter < ourGame.fieldNumber; fieldsCounter++)
+                    {
+                        usedButton[matchCounter][fieldsCounter].IsHitTestVisible = false;
+                    }
+            }
+            catch (ArgumentOutOfRangeException catchedException)
+            {
+                MessageBox.Show("Error - Exception occure - method: disableHitTestButtons()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
+            }
+            catch (Exception catchedException)
+            {
+                MessageBox.Show("Error - Exception occure  - method: disableHitTestButtons()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
+            }
         }
 
         private void buttonClickHandle(int thisMatch, int thisField)
@@ -250,54 +368,84 @@ namespace CSharpAcademiProject
             int fieldCounter;
             bool changeMade;
             this.allButtonsList[thisMatch][thisField].Background = colorChange(this.allButtonsList[thisMatch][thisField].Background);
-            for (fieldCounter = 0; fieldCounter < ourGame.fieldNumber; fieldCounter++)
+            try
             {
-                changeMade = false;
-                if (thisField != fieldCounter)
+                for (fieldCounter = 0; fieldCounter < ourGame.fieldNumber; fieldCounter++)
                 {
-                    if (this.allButtonsList[thisMatch][thisField].Background == this.allButtonsList[thisMatch][fieldCounter].Background)
+                    changeMade = false;
+                    if (thisField != fieldCounter)
                     {
-                        this.allButtonsList[thisMatch][thisField].Background = colorChange(this.allButtonsList[thisMatch][thisField].Background);
-                        changeMade = true;
+                        if (this.allButtonsList[thisMatch][thisField].Background == this.allButtonsList[thisMatch][fieldCounter].Background)
+                        {
+                            this.allButtonsList[thisMatch][thisField].Background = colorChange(this.allButtonsList[thisMatch][thisField].Background);
+                            changeMade = true;
+                        }
+                    }
+                    if (changeMade == true)
+                    {
+                        fieldCounter = -1;
                     }
                 }
-                if(changeMade == true)
-                {
-                    fieldCounter = -1;
-                }
+            }
+            catch (ArgumentOutOfRangeException catchedException)
+            {
+                MessageBox.Show("Error - Exception occure - method: buttonClickHandle()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
+            }
+            catch (Exception catchedException)
+            {
+                MessageBox.Show("Error - Exception occure  - method: buttonClickHandle()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
             }
         }
 
-        public void colorGoal (int[] choosenColors)
+        public void colorGoal(int[] choosenColors)
         {
             SolidColorBrush newColor;
-            for (int actualField = 0; actualField < ourMatch.fieldNumber; actualField++)
+            try
             {
-                switch (choosenColors[actualField])
+                for (int actualField = 0; actualField < ourMatch.fieldNumber; actualField++)
                 {
-                    case 0:
-                        newColor = Brushes.Red;
-                        break;
-                    case 1:
-                        newColor = Brushes.Orange;
-                        break;
-                    case 2:
-                        newColor = Brushes.Yellow;
-                        break;
-                    case 3:
-                        newColor = Brushes.Violet;
-                        break;
-                    case 4:
-                        newColor = Brushes.Blue;
-                        break;
-                    case 5:
-                        newColor = Brushes.Green;
-                        break;
-                    default:
-                        newColor = Brushes.Red;
-                        break;
+                    switch (choosenColors[actualField])
+                    {
+                        case 0:
+                            newColor = Brushes.Red;
+                            break;
+                        case 1:
+                            newColor = Brushes.Orange;
+                            break;
+                        case 2:
+                            newColor = Brushes.Yellow;
+                            break;
+                        case 3:
+                            newColor = Brushes.Violet;
+                            break;
+                        case 4:
+                            newColor = Brushes.Blue;
+                            break;
+                        case 5:
+                            newColor = Brushes.Green;
+                            break;
+                        default:
+                            newColor = Brushes.Red;
+                            break;
+                    }
+                    goalColorsList[actualField].Background = newColor;
                 }
-                goalColorsList[actualField].Background = newColor;
+            }
+            catch (ArgumentOutOfRangeException catchedException)
+            {
+                MessageBox.Show("Error - Exception occure - method: colorGoal()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
+            }
+            catch (Exception catchedException)
+            {
+                MessageBox.Show("Error - Exception occure  - method: colorGoal()");
+                ExceptionHandling ourException = new ExceptionHandling();
+                ourException.WhichException(catchedException);
             }
         }
 
@@ -334,7 +482,9 @@ namespace CSharpAcademiProject
         }
         private void buttonSet_click(object sender, RoutedEventArgs e)
         {
-            ourMatch.calculateScore(allButtonsList, allScoresButtonsList, goalColorsList);
+            ourMatch.calculateScore(allButtonsList, goalColorsList, allScoresButtonsList);
+            ourMatch.decideScore(allScoresButtonsList);
+            ourMatch.decideFinalScore(finalScoreTextBlock, ourMatch.PlayCounter);
             disableHitTestButtons(allButtonsList, ourMatch);
             if (this.ourMatch.PlayCounter < ourGame.matchNumber - 1)
             {
@@ -342,8 +492,22 @@ namespace CSharpAcademiProject
                 enableButtons(allButtonsList, ourMatch);
                 enableHitTestButtons(allButtonsList, ourMatch);
             }
-            goalColorsList[0].Content = ourGame.PlayCounter;
-            goalColorsList[1].Content = ourMatch.PlayCounter;
+            else
+            {
+                enableButtons(goalColorsList, ourMatch);
+                buttonSet.IsEnabled = false;
+            }
+            gameEnd();
+        }
+
+        private void gameEnd()
+        {
+            if(ourMatch.FinalScore == scoreMarker.Victory)
+            {
+                disableHitTestButtons(allButtonsList, ourMatch);
+                enableButtons(goalColorsList, ourMatch);
+                buttonSet.IsEnabled = false;
+            }
         }
 
         private void buttonPart6Field1_Click(object sender, RoutedEventArgs e)
@@ -471,9 +635,8 @@ namespace CSharpAcademiProject
             this.ourGame.PlayCounter++;
             this.ourMatch.PlayCounter = 0;
             buttonsInitialConditions();
-            goalColorsList[0].Content = this.ourGame.PlayCounter;
-            goalColorsList[1].Content = ourMatch.PlayCounter;
             colorGoal(ourMatch.randomGoal(ourMatch.colorNumber));
+            finalScoreTextBlock.Text = "";
         }
     }
 }

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
+using System.Windows.Controls;
 
 namespace CSharpAcademiProject
 {
-    enum scoreMarker { Victory, Defeat, Outstanding }
+    enum scoreMarker { Victory, Defeat, Undecided }
     class Game
     {
         public int matchNumber = 6;
@@ -32,7 +34,7 @@ namespace CSharpAcademiProject
             get;
             set;
         }
-        public List<List<scoreMarker>> Score
+        public scoreMarker[][] Score
         {
             get;
             set;
@@ -40,31 +42,33 @@ namespace CSharpAcademiProject
         public Game(int playValue)
         {
             this.PlayCounter = playValue;
-            Score = new List<List<scoreMarker>>();
+            Score = new scoreMarker[this.matchNumber][];
         }
-        public void decideScore()
+        public void decideFinalScore(TextBlock showScoreText, int matchCounter)
         {
-            //Tutaj na podstawie tablicy - score, sprawdzimy czy wszystkie elementy sa rowne 2. wielowatkowo
-
-        }
-        public void decideFinalScore()
-        {
-            /*if(obiektPartii.decideScore==Victory)
-             {
-                this.FinalScore = scoreMarker.Victory;
-             }
-             if(obiektMatch.decideScore==Defeat)
-             {
-                if(obiektMatchPlayCounter==lastMatch)
+            bool somethingWrong = false;
+            somethingWrong = false;
+                for (int fieldsCounter = 0; fieldsCounter < this.fieldNumber; fieldsCounter++)
                 {
-                    this.FinalScore = scoreMarker.Defeat;     
-                }   
-                 else
-                {
-                    this.FinalScore = scoreMarker.Outstanding;
+                    if (Score[matchCounter][fieldsCounter] != scoreMarker.Victory)
+                    {
+                        somethingWrong = true;
+                    }
                 }
-             }
-             */
+            if (somethingWrong == false)
+            {
+                showScoreText.Text = "You win!";
+                this.FinalScore = scoreMarker.Victory;
+            }
+            else if (matchCounter == this.matchNumber - 1)
+            {
+                showScoreText.Text = "You lose";
+                this.FinalScore = scoreMarker.Defeat;
+            }
+            else
+            {
+                this.FinalScore = scoreMarker.Undecided;
+            }
         }
     }
 }

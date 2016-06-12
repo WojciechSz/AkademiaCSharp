@@ -11,17 +11,17 @@ namespace CSharpAcademiProject
 {
     class Match : Game
     {
-        public Match(int playValue):base(playValue)
-        {
-            this.PlayCounter = playValue;
-            MatchScore = new List<scoreMarker>();
-        }
-        public List<scoreMarker> MatchScore
+        public scoreMarker[] MatchScore
         {
             get;
             set;
-        }  
-        public void calculateScore(List<List<Button>> actualField, List<List<Button>> allScoresLabelsList, List<Button> goalBackground)
+        }
+        public Match(int playValue):base(playValue)
+        {
+            this.PlayCounter = playValue;
+            MatchScore = new scoreMarker[this.fieldNumber];
+        }
+        public void calculateScore(List<List<Button>> actualField, List<Button> goalBackground, List<List<Button>> allScoresLabelsList)
         {
             List<compareResult> result;
             result = new List<compareResult>();
@@ -35,9 +35,7 @@ namespace CSharpAcademiProject
             resultWhite.Add(compareResult.equal);
             resultWhite.Add(compareResult.equal);
             resultWhite.Add(compareResult.equal);
-
             int[] randomScoreField;
-            int scoreFieldCounter = 0;
 
             randomScoreField = this.randomGoal(this.fieldNumber);
             for (int fieldsCounter = 0; fieldsCounter < this.fieldNumber; fieldsCounter++)
@@ -46,8 +44,6 @@ namespace CSharpAcademiProject
                 if (result[fieldsCounter] == compareResult.equal)
                 {
                     allScoresLabelsList[this.PlayCounter][randomScoreField[fieldsCounter]].Background = Brushes.Black;
-                    this.MatchScore.Add(scoreMarker.Victory);
-                    scoreFieldCounter++;
                 }
                 if (result[fieldsCounter] == compareResult.notEqual)
                 {
@@ -57,21 +53,32 @@ namespace CSharpAcademiProject
                         if (resultWhite[internalFieldsCounter] == compareResult.equal)
                         {
                             allScoresLabelsList[this.PlayCounter][randomScoreField[fieldsCounter]].Background = Brushes.White;
-                            this.MatchScore.Add(scoreMarker.Outstanding);
-                            scoreFieldCounter++;
                             break;
-                        }
-                        else
-                        {
-                            allScoresLabelsList[this.PlayCounter][randomScoreField[fieldsCounter]].Background = Brushes.DimGray;
-                            this.MatchScore.Add(scoreMarker.Defeat);
-                            scoreFieldCounter++;
                         }
                     }
                 }
             }
-            Score.Add(MatchScore);
         }
+        public void decideScore(List<List<Button>> allScoresLabelsList)
+        {
+            for (int fieldsCounter = 0; fieldsCounter < this.fieldNumber; fieldsCounter++)
+            {
+                if (allScoresLabelsList[this.PlayCounter][fieldsCounter].Background == Brushes.Black)
+                {
+                    this.MatchScore[fieldsCounter] = scoreMarker.Victory;
+                }
+                if (allScoresLabelsList[this.PlayCounter][fieldsCounter].Background == Brushes.White)
+                {
+                    this.MatchScore[fieldsCounter] = scoreMarker.Undecided;
+                }
+                if (allScoresLabelsList[this.PlayCounter][fieldsCounter].Background == Brushes.Gray)
+                {
+                    this.MatchScore[fieldsCounter] = scoreMarker.Defeat;
+                }
+            }
+            this.Score[this.PlayCounter] = new scoreMarker[this.fieldNumber];
+            this.Score[this.PlayCounter] = this.MatchScore;
+        }   
         public compareResult colorCompare(Brush actualBackground, Brush goalBackground)
         {
             if (actualBackground == goalBackground)
