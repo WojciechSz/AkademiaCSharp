@@ -131,12 +131,12 @@ namespace CSharpAcademiProject
 
         private void prepareAllScoresList()
         {
-            allScoresButtonsList.Add(score1ButtonsList);
-            allScoresButtonsList.Add(score2ButtonsList);
-            allScoresButtonsList.Add(score3ButtonsList);
-            allScoresButtonsList.Add(score4ButtonsList);
-            allScoresButtonsList.Add(score5ButtonsList);
-            allScoresButtonsList.Add(score6ButtonsList);
+            allScoresButtonsList.Add(this.score1ButtonsList);
+            allScoresButtonsList.Add(this.score2ButtonsList);
+            allScoresButtonsList.Add(this.score3ButtonsList);
+            allScoresButtonsList.Add(this.score4ButtonsList);
+            allScoresButtonsList.Add(this.score5ButtonsList);
+            allScoresButtonsList.Add(this.score6ButtonsList);
         }
 
         private void prepareScoreButtonsList()
