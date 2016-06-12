@@ -1,7 +1,7 @@
 ﻿<Window x:Class="CSharpAcademiProject.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="570" Width="400" Background="AntiqueWhite" ResizeMode="NoResize">
+        Title="Logic Game" Height="570" Width="400" Background="AntiqueWhite" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
