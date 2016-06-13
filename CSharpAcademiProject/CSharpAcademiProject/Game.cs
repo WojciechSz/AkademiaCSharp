@@ -19,11 +19,6 @@ namespace CSharpAcademiProject
             get;
             set;
         }
-        public int GameTime
-        {
-            get;
-            set;
-        }   
         public scoreMarker FinalScore
         {
             get;
