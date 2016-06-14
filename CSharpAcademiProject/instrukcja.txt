@@ -1,0 +1,16 @@
+﻿Projekt: Gra logiczna
+
+Cel: Zgadnij kombinacje 4 kolorów
+
+Generowana jest losowa kombinacja 4 z 6 możliwych kolorów, bez powtarzania danego koloru
+(przyciski u góry ekranu, kombinacja jest niewidoczna dla użytkownika do końca rozgrywki).
+Zadaniem gracza jest odgadnięcie kombinacji klikająć na przyciski po prawej stronie. Kliknięcie zmienia kolor tła przycisku, bez powtórzeń.
+(np. jeżeli jedno pole jest już czerwone, to klikając w następne zmieni ono swój kolor na pomarańczowy, 
+by uniemożliwić ustawienie kombinacji z dwoma lub więcej takimi samymi kolorami)
+Po wciśnięci przycisku "Confirm" następuję sprawdzenie ułożonej kombinacji. Po stronie lewej pojawiają się wyniki danej próby.
+Kolor biały oznacza że jeden z kolorów występuję w kombinacji do odgadnięcia ale na innym miejscu. 
+Uzyskanie 4 czarnych pól oznacza zwycięstwo. Podpowiedzi ułożone są w losowej kolejności.
+Gracz ma 6 prób. W momencie odgadnięcia lub wykorzystania wszystkich szans,
+pojawia się komunikat informujący o wyniku gry (You win/You lose) oraz odsłonięta zostaje kombinacja wylosowana przez program.
+Przycisk "New Game" umożliwia rozpoczęcie nowej rozgrywki w dowolnym momencie gry.
+Powoduje to wylosowanie nowej kombinacji i wyczyszczenie wszystkich zmian wprowadzanych przez użytkownika.
